@@ -120,23 +120,6 @@ extern "x86-interrupt" fn keyboard_interrupt_handler(
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-/// tests 
-
-#[test_case]
-fn test_breakpoint_exception() {
-    // invoke a breakpoint exception
-    x86_64::instructions::interrupts::int3();
-}
-
-#[test_case]
-fn test_double_fault() {
-    // invoke a double fault
-    unsafe {
-        *(0xdeadbeef as *mut u64) = 42;
-    };
-}
-
-///////////////////////////////////////////////////////////////////////////////
 // PIC SYSTEM START
 
 use pic8259::ChainedPics;

@@ -37,10 +37,11 @@ pub fn exit_qemu(exit_code: QemuExitCode) { // closes the QEMU testing enviromen
 
 ///////////////////////////////////////////////////////////////////////////////
 
-mod serial; // serial comunication
-mod vga; // VGA writing to screen
+pub mod serial; // serial comunication
+pub mod vga; // VGA writing to screen
 pub mod interrupts; // breakpoint and double fault handler
 pub mod gdt; // stack overflow handler
+pub mod test; // all the tests
 
 ///////////////////////////////////////////////////////////////////////////////
 
